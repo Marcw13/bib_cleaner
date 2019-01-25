@@ -8,7 +8,7 @@ Betterment (2018). Plans for every investor. https://www.betterment.com/pricing/
 1. Create a regular BibTeX file (named `bib.bib`by default). Internet sources should be saved as web pages, such that they appear as `@misc` entries in the bib file.
 2. Export as `bib.bib`.
 3. Run `bib_cleaner.py`. 
-4. A new `bib_clean.bib` file is created. Attention: by default, the script appends entries to the bib file. Hence, it might be useful to create an emtpy file first.
+4. A new `bib_clean.bib` file is created. 
 5. Set `bib_clean.bib` as bibliography in TeX document. 
 
 # Exceptions
