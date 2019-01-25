@@ -60,7 +60,7 @@ for line in bib:
                 elif month == "12":
                     month = "December"
                 else:
-                    month = "NO DATE"
+                    month = "NO MONTH"
         print link
         note = ",\nnote = {\href{"+ link +"}{"+ link +"} Accessed on: "+ month +" " + day + ", " + year + ".}"
     entry = line + "}" + note + "\n"
