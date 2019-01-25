@@ -6,6 +6,10 @@ import re
 bib = open("bib.bib", 'r').read().split('}\n') # specify name/location of bib document here
 biblist = []
 
+with open("bib_clean.bib","a") as f: # delete old content of new bib file
+    f.truncate(0)
+f.close() 
+
 for line in bib:
     note = ""
     if re.search("@misc{", line):
@@ -17,10 +21,10 @@ for line in bib:
                 link = link[0]
                 link = re.sub(r"^= {", "", link)
                 link = re.sub(r"},$", "", link)
-            if re.search("urldate = ", attribute):
+            if re.search("urldate = ", attribute): 
                 urldate = attribute
                 year = re.findall(r"[0-9]{4}",urldate)
-                try:
+                try: 
                     year = year[0]
                 except:
                     year = "NO YEAR"
@@ -48,7 +52,7 @@ for line in bib:
                 elif month == "06":
                     month = "June"
                 elif month == "07":
-                    month = "July"
+                    month = "July"  
                 elif month == "08":
                     month = "August"
                 elif month == "09":
@@ -60,10 +64,10 @@ for line in bib:
                 elif month == "12":
                     month = "December"
                 else:
-                    month = "NO MONTH"
+                    month = "NO DATE"    
         print link
-        note = ",\nnote = {\href{"+ link +"}{"+ link +"} Accessed on: "+ month +" " + day + ", " + year + ".}"
+        note = ",\nnote = {\href{"+ link +"}{"+ link +"} Accessed on: "+ month +" " + day + ", " + year + ".}"  
     entry = line + "}" + note + "\n"
     with open("bib_clean.bib","a") as f:
         f.write(entry)
-    f.close()
+    f.close() 
